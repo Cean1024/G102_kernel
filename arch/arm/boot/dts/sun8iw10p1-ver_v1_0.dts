@@ -22,7 +22,15 @@
 				reg = <0x1c>;
 				power_gpio = <&axp_gpio0 PP 0 1 1 1 1>;
 				gpio-reset = <&pio PG 9 1 1 1 1>;
-            };
+            		};
+			dsp0@38{
+				compatible = "dsp,dspcodec0";
+				reg = <0x38>;
+            		};
+			dsp1@39{
+				compatible = "dsp,dspcodec1";
+				reg = <0x39>;
+            		};
 		};
 
 		twi1: twi@0x01c2b000 {

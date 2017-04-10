@@ -119,6 +119,16 @@ config SND_SUNXI_SOC_DAUDIO1_MACHINE
 	help
  	  Say Y or M if you want to add the daudio1 MACHEINE interface.
 
+config SND_SUNXI_SOC_DDSP0_MACHINE
+	tristate "ASoC support for ddsp0 machine"
+	help
+ 	  Say Y or M if you want to add the ddsp0 MACHEINE interface.
+
+config SND_SUNXI_SOC_DDSP1_MACHINE
+	tristate "ASoC support for ddsp1 machine"
+	help
+ 	  Say Y or M if you want to add the ddsp1 MACHEINE interface.
+
 config SND_SUNXI_SOC_DMIC
 	tristate "ASoC support for dmic."
 	select REGMAP_MMIO

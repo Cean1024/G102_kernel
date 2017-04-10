@@ -56,6 +56,11 @@ obj-$(CONFIG_SND_SUNXI_SOC_DAUDIO0_MACHINE) += sunxi-snddaudio0.o
 #daudio1
 obj-$(CONFIG_SND_SUNXI_SOC_DAUDIO1_MACHINE) += sunxi-snddaudio1.o
 
+#ddsp0
+obj-$(CONFIG_SND_SUNXI_SOC_DDSP0_MACHINE) += sunxi-sndddsp0.o
+#ddsp1
+obj-$(CONFIG_SND_SUNXI_SOC_DDSP1_MACHINE) += sunxi-sndddsp1.o
+
 #dmic
 obj-$(CONFIG_SND_SUNXI_SOC_DMIC) += sunxi-snddmic.o
 

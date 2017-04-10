@@ -546,6 +546,21 @@ config SND_SOC_NAU8540
 	help
 	  Say Y or M if you want to add support for NAU8540 audiocodec.
 
+config SND_SOC_DSP0
+	tristate "User DSP 0 AudioCodec"
+	depends on ARCH_SUN8IW10
+	default n
+	help
+	  Say Y or M if you want to add support for STA32X audiocodec.
+
+config SND_SOC_DSP1
+	tristate "User DSP 1 AudioCodec"
+	depends on ARCH_SUN8IW10
+	default n
+	help
+	  Say Y or M if you want to add support for NAU8540 audiocodec.
+
+
 config SND_SOC_CX2081X
 	tristate "CX2081X AudioCodec"
 	depends on ARCH_SUN8IW10

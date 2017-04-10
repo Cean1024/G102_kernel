@@ -55,6 +55,9 @@ snd-soc-spdif-rx-objs := spdif_receiver.o
 snd-soc-ssm2602-objs := ssm2602.o
 snd-soc-sta32x-objs := sta32x.o
 snd-soc-nau8540-objs := nau8540.o
+#new codec
+snd-soc-dspcodec0-objs := dspcodec0.o
+snd-soc-dspcodec1-objs := dspcodec1.o
 
 snd-soc-cx2081x-objs := cx2081x.o
 
@@ -182,8 +185,13 @@ obj-$(CONFIG_SND_SOC_SI476X)	+= snd-soc-si476x.o
 obj-$(CONFIG_SND_SOC_SN95031)	+=snd-soc-sn95031.o
 obj-$(CONFIG_SND_SOC_SPDIF)	+= snd-soc-spdif-rx.o snd-soc-spdif-tx.o
 obj-$(CONFIG_SND_SOC_SSM2602)	+= snd-soc-ssm2602.o
+
 obj-$(CONFIG_SND_SOC_STA32X)   += snd-soc-sta32x.o
 obj-$(CONFIG_SND_SOC_NAU8540)   += snd-soc-nau8540.o
+
+obj-$(CONFIG_SND_SOC_DSP0)   += snd-soc-dspcodec0.o
+obj-$(CONFIG_SND_SOC_DSP1)   += snd-soc-dspcodec1.o
+
 obj-$(CONFIG_SND_SOC_STA529)   += snd-soc-sta529.o
 obj-$(CONFIG_SND_SOC_CX2081X)   += snd-soc-cx2081x.o
 obj-$(CONFIG_SND_SOC_AD12250)   += snd-soc-ad12250.o
