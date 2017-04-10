@@ -1,0 +1,61 @@
+/*
+ * Allwinner Technology CO., Ltd. sun8iw10p1 ver_v1_0 board.
+ *
+ * pro board support.
+ */
+
+/dts-v1/;
+
+#include "sun8iw10p1.dtsi"
+
+/{
+
+	soc@01c00000 {
+		uart0: uart@01c28000 {
+			status = "okay";
+		};
+
+		twi0: twi@0x01c2ac00 {
+			status = "okay";
+			sta32x@1c{
+				compatible = "sta,sta32x";
+				reg = <0x1c>;
+				power_gpio = <&axp_gpio0 PP 0 1 1 1 1>;
+				gpio-reset = <&pio PG 9 1 1 1 1>;
+            };
+		};
+
+		twi1: twi@0x01c2b000 {
+			status = "okay";
+			nau8540@1c{
+            	compatible = "nau,nau8540_0";
+            	reg = <0x1c>;
+				mic_pw_en = <&pio PD 0 1 1 1 1>;
+			};
+			nau8540@1d{
+				compatible = "nau,nau8540_1";
+				reg = <0x1d>;
+ 			};
+			cx2081x@35{
+				compatible = "cx,cx2081x_0";
+				reg = <0x35>;
+			};
+			cx2081x@3b{
+				compatible = "cx,cx2081x_1";
+				reg = <0x3b>;
+				voltage_enable = "audio-33";
+			};
+		};
+		
+		ad12250:ad12250@0{
+			compatible = "allwinner,ad12250-codec";
+			status = "okay";
+		};
+		
+		snddaudio1:sound@2{
+			sunxi,ad12250-codec = <&ad12250>;
+			status = "okay";
+		};
+		
+	};
+};
