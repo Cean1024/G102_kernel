@@ -185,7 +185,7 @@ static int dsp1_hw_params(struct snd_pcm_substream *substream,
 	u8 confa, confb;
 
 	rate = params_rate(params);
-	pr_debug("rate: %u\n", rate);
+	printk("rate: %u\n", rate);
 	
 	return 0;
 }
@@ -205,7 +205,7 @@ static int dsp1_set_bias_level(struct snd_soc_codec *codec,
 	int ret;
 	struct dsp1_priv *dsp1 = snd_soc_codec_get_drvdata(codec);
 
-	pr_debug("level = %d\n", level);
+	printk("level = %d\n", level);
 
 	return 0;
 }

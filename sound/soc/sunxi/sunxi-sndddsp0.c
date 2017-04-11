@@ -60,30 +60,32 @@ static int sunxi_sndddsp0_hw_params(struct snd_pcm_substream *substream,
 	/*set system clock source freq and set the mode as daudio or pcm*/
 	ret = snd_soc_dai_set_sysclk(cpu_dai, 0 , freq, 0);
 	if (ret < 0) {
+		pr_warn("[sndddsp0],the cpu_dai set set_sysclk failed.\n");
 		return ret;
 	}
 
 	/*set system clock source freq and set the mode as daudio or pcm*/
 	ret = snd_soc_dai_set_sysclk(codec_dai, 0 , freq, 0);
 	if (ret < 0) {
-		pr_warn("[daudio0],the codec_dai set set_sysclk failed.\n");
+		pr_warn("[sndddsp0],the codec_dai set set_sysclk failed.\n");
 	}
 
 	ret = snd_soc_dai_set_fmt(codec_dai, SND_SOC_DAIFMT_DSP_A |
 						SND_SOC_DAIFMT_NB_NF | SND_SOC_DAIFMT_CBS_CFS);
 	if (ret < 0) {
-		pr_warn("[daudio0],the codec_dai set set_fmt failed.\n");
+		pr_warn("[sndddsp0],the codec_dai set set_fmt failed.\n");
 	}
 
 	clk_div = freq / params_rate(params);
 
 	ret = snd_soc_dai_set_clkdiv(cpu_dai, 0, clk_div);
 	if (ret < 0) {
+		pr_warn("[sndddsp0],the cpu_dai set set_sysclk failed.\n");
 		return ret;
 	}
 	ret = snd_soc_dai_set_clkdiv(codec_dai, 0, clk_div);
 	if (ret < 0) {
-		pr_warn("[daudio0],the codec_dai set set_clkdiv failed.\n");
+		pr_warn("[sndddsp0],the codec_dai set set_clkdiv failed.\n");
 	}
 
 	return 0;

@@ -36,7 +36,10 @@
 modules.builtin
 Module.symvers
 *.dwo
-
+*.map
+zImage
+uImage
+Image
 #
 # Top-level generic files
 #
@@ -48,7 +51,7 @@ Module.symvers
 /vmlinuz
 /System.map
 /Module.markers
-
+output/
 #
 # Debian directory (make deb-pkg)
 #

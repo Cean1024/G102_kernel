@@ -142,15 +142,6 @@ static int  sunxi_sndddsp1_dev_probe(struct platform_device *pdev)
 		sunxi_snddaudio_dai_link[i].platform_name = NULL;
 		sunxi_snddaudio_dai_link[i].platform_of_node = sunxi_snddaudio_dai_link[i].cpu_of_node;
 
-		if(!strcmp("sndlinein",sunxi_snddaudio_dai_link[i].name)){
-			sunxi_snddaudio_dai_link[i].codec_name = NULL;
-			sunxi_snddaudio_dai_link[i].codec_of_node = of_parse_phandle(np,"sunxi,ad12250-codec", 0);
-			if (!sunxi_snddaudio_dai_link[i].codec_of_node) {
-				dev_err(&pdev->dev,"Property 'sunxi,ad12250-codec' missing or invalid\n");
-				ret = -EINVAL;
-				goto err1;
-			}
-		}
 	}
 
 	ret = snd_soc_register_card(card);
